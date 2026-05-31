@@ -21,7 +21,9 @@ transport_plugin_dir = audacious_dep.get_variable(pkgconfig: 'plugin_dir') / 'Tr
 # Build as a shared module (not a library) so Audacious can dlopen it.
 # name_prefix: '' ensures the output is ytdlp.so, not libytdlp.so.
 shared_module('ytdlp',
-  'src/ytdlp.cc',
+  'src/common.cc',
+  'src/stream.cc',
+  'src/plugin.cc',
   dependencies: [audacious_dep],
   name_prefix: '',
   install: true,
